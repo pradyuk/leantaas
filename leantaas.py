@@ -47,12 +47,10 @@ response = {
 
 
 def validate_options(subject, ind):
-	#print(list(subject[s[ind]][ind]))
 	res = []
 	if(s[ind] in subject.keys()):
 		if(len(subject[s[ind]]) >= 1):
 			for question in range(len(subject[s[ind]])):
-				#print(subject.keys())
 				options = list(subject[s[ind]][question].values())[0]['options']
 				if(not options):
 					res.append((list(subject.keys())[0],list(subject[s[ind]][ind]), "Invalid"))
@@ -63,7 +61,6 @@ def validate_options(subject, ind):
 						res.append((list(subject.keys())[0], list(subject[s[ind]][ind]),"Invalid"))
 		else:
 			res.append((list(subject.keys())[0],list(subject[s[ind]][ind]), "Invalid"))
-	#return (list(subject.keys())[0], list(subject[s[ind]][0])[0],res[ind])
 	return res
 
 def validate_sports(sports):
